@@ -2,9 +2,16 @@
 
 </script>
 <template>
+    <!-- class="flex-col" -->
     <div>
-        {{ $route.params.reflect }}
+        <h1>
+            <!-- h100% w100% -->
+            {{ $route.params.reflect }}
+        </h1>
+        <div>
+            <p>
+                contentDescription
+            </p>
+        </div>
     </div>
 </template>
-
-<style lang="scss"></style>

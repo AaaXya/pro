@@ -3,40 +3,28 @@
     text: string
     icon?: string,
     state?: boolean,
-    position: string,
-    discuss?: string
+    position: string
   }
 
-  const sideName = ['hot', 'dry-pot', 'fish', 'cold-dishes']
-
+  const sideName = ['hot', 'dry-pot', 'fish', 'cold-dishes', 'wine-drinks']
 
   const items: Side[] = [
-    { text: '1', position: '/side/a' },
-    { text: '2', position: '/side/a' },
-    { text: '3', position: '/side/v' },
-    { text: '3', position: '/side/c' },
-    { text: '1', position: '/about', discuss: 'margin-top:auto' }]
+    { text: '1', position: '/sort/a' },
+    { text: '2', position: '/sort/a' },
+    { text: '3', position: '/sort/v' },
+    { text: '3', position: '/sort/c' },
+  ]
+
 </script>
 
-<template>
-  <ul>
-    <router-link tag="li" :style="item.discuss" v-for="(item, index) in items" :key="index" :to="item.position"> {{
+<template class="flex">
+  <!-- b-rd -->
+  <ul class="flex-col h100vh w25 theme">
+    <router-link tag="li" v-for="(item, index) in items" :key="index" :to="item.position"> {{
       item.text
     }}</router-link>
-
+    <router-link class="m-t-a" to="/option">x</router-link>
   </ul>
-  <div>
-
-    <router-view></router-view>
-  </div>
+  <router-view></router-view>
 </template>
 
-<style scoped>
-ul {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  width: 100px;
-  background-color: rgb(255, 202, 94);
-}
-</style>
